@@ -15,7 +15,10 @@ export default function About() {
             (Matrícula ITB 8644).
           </p>
         </div>
-        <img className="team" src="/images/equipo.jpg" alt="El equipo de instructores de Tactical Ops con la remera oficial" width="900" height="768" loading="lazy" decoding="async" />
+        <picture>
+          <source srcSet="/images/equipo.webp" type="image/webp" />
+          <img className="team" src="/images/equipo.jpg" alt="El equipo de instructores de Tactical Ops con la remera oficial" width="900" height="768" loading="lazy" decoding="async" />
+        </picture>
       </div>
     </Section>
   );

@@ -3,6 +3,7 @@ import SectionHeading from './ui/SectionHeading.jsx';
 import { PHOTOS } from '../data/content.js';
 
 const GAP = 16;
+const toWebpSource = (src) => src.replace(/\.(jpe?g|png)$/i, '.webp');
 
 export default function Experiences() {
   const track = useRef(null);
@@ -25,7 +26,10 @@ export default function Experiences() {
       <div className="car" ref={track} role="region" aria-label="Fotos de las jornadas" tabIndex={0} onKeyDown={onKeyDown}>
         {PHOTOS.map(([src, alt], i) => (
           <figure key={src}>
-            <img src={src} alt={alt} width="960" height="720" loading={i ? 'lazy' : 'eager'} decoding="async" />
+            <picture>
+              <source srcSet={toWebpSource(src)} type="image/webp" />
+              <img src={src} alt={alt} width="960" height="720" loading={i ? 'lazy' : 'eager'} decoding="async" />
+            </picture>
           </figure>
         ))}
       </div>

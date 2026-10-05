@@ -1,6 +1,8 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import CardMedia from './CardMedia.jsx';
 
+const toWebpSource = (src) => src.replace(/\.(jpe?g|png)$/i, '.webp');
+
 export default function ImageLightbox({
   image,
   alt,
@@ -55,6 +57,7 @@ export default function ImageLightbox({
   };
 
   const triggerClasses = ['image-lightbox-trigger', triggerClassName].filter(Boolean).join(' ');
+  const webpImage = toWebpSource(image);
 
   return (
     <>
@@ -94,7 +97,10 @@ export default function ImageLightbox({
               <span aria-hidden="true">×</span>
             </button>
           </header>
-          <img className="image-modal-image" src={image} alt={alt} decoding="async" />
+          <picture>
+            <source srcSet={webpImage} type="image/webp" />
+            <img className="image-modal-image" src={image} alt={alt} decoding="async" />
+          </picture>
         </div>
       </dialog>
     </>
