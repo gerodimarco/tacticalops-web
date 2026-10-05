@@ -77,6 +77,38 @@ nav .btn{min-height:42px;padding:.4rem 1.1rem;font-size:1rem}
 .card li em{font-style:normal;color:var(--ac);font-weight:600}
 .card .btn{margin-top:auto;align-self:stretch}
 .card ul{margin-bottom:1.4rem}
+.image-lightbox-trigger{position:relative;display:block;width:calc(100% + 3.2rem);margin:-1.6rem -1.6rem 1.15rem;padding:0;border:0;border-radius:5px 5px 0 0;background:var(--s2);color:inherit;text-align:inherit;cursor:zoom-in;overflow:hidden}
+.image-lightbox-trigger .pimg{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;background:var(--s2);border:0;border-radius:0;margin:0;transition:transform .18s ease}
+.image-lightbox-trigger:hover .pimg{transform:scale(1.025)}
+.image-expand-indicator{position:absolute;top:.7rem;right:.7rem;width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.5);border-radius:50%;background:rgba(5,5,5,.8);color:#fff;pointer-events:none;transition:background .15s,border-color .15s}
+.image-expand-indicator svg{width:19px;height:19px}
+.image-lightbox-trigger:hover .image-expand-indicator{background:var(--ac);border-color:var(--ac)}
+.platform-list{list-style:none;margin:.15rem 0 1rem;padding:0}
+.platform-list li{padding:.45rem 0;border-top:1px solid var(--bd);color:#e6e6e6;overflow-wrap:anywhere}
+.platform-list li:first-child{border-top:0}
+.platform-list strong{color:var(--mu);font-weight:600}
+.image-lightbox-action{width:100%;min-height:48px;margin-top:auto}
+.image-modal{max-width:calc(100vw - 1rem);max-height:calc(100dvh - 1rem);padding:0;overflow:auto;overscroll-behavior:contain;border:1px solid var(--bd);border-radius:6px;background:var(--s);color:var(--fg)}
+.image-modal[open]{animation:lightbox-in .18s ease-out both}
+.image-modal::backdrop{background:rgba(0,0,0,.88);backdrop-filter:blur(2px);animation:lightbox-backdrop-in .18s ease-out both}
+.image-modal.is-closing{animation:lightbox-out .15s ease-in both}
+.image-modal.is-closing::backdrop{animation:lightbox-backdrop-out .15s ease-in both}
+.image-modal-content{max-height:calc(100dvh - 1rem)}
+.image-modal-header{position:sticky;top:0;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:58px;padding:.45rem .65rem .45rem 1rem;border-bottom:1px solid var(--bd);background:var(--s)}
+.image-modal-header h2{max-width:calc(100% - 3.5rem);font-size:1.45rem;line-height:1.1;overflow-wrap:anywhere}
+.image-modal-close{flex:0 0 44px;width:44px;height:44px;display:grid;place-items:center;padding:0;border:1px solid var(--bd);border-radius:4px;background:var(--s2);color:var(--fg);font:400 1.8rem/1 var(--bd-f);cursor:pointer}
+.image-modal-close:hover{border-color:var(--ac);background:var(--ac)}
+.image-modal-image{display:block;width:auto;height:auto;max-width:calc(100vw - 2rem);max-height:calc(100dvh - 6rem);margin:auto;object-fit:contain}
+@keyframes lightbox-in{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:scale(1)}}
+@keyframes lightbox-out{from{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(.985)}}
+@keyframes lightbox-backdrop-in{from{opacity:0}to{opacity:1}}
+@keyframes lightbox-backdrop-out{from{opacity:1}to{opacity:0}}
+@media(max-width:600px){
+ .image-modal{max-width:calc(100vw - .75rem);max-height:calc(100dvh - .75rem)}
+ .image-modal-content{max-height:calc(100dvh - .75rem)}
+ .image-modal-header{padding-left:.75rem}
+ .image-modal-image{max-width:calc(100vw - 1.5rem);max-height:calc(100dvh - 5.25rem)}
+}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,5vw,4rem);align-items:start}
 @media(max-width:800px){.split{grid-template-columns:1fr}}
 .steps{counter-reset:s;display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:2.6rem}
@@ -122,7 +154,7 @@ footer p{margin:.6rem 0 0;max-width:46ch}
 footer a{color:#fff}
 .fab{display:none;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;min-height:56px;padding:0 1.4rem;box-shadow:0 6px 20px rgba(0,0,0,.6)}
 @media(max-width:800px){.fab{display:inline-flex}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 
 .team{width:100%;height:auto;max-width:560px;aspect-ratio:900/768;object-fit:contain;border-radius:6px;border:1px solid var(--bd);justify-self:center}
 .narrow .wrap{max-width:860px}

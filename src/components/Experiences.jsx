@@ -9,6 +9,7 @@ export default function Experiences() {
 
   const step = (dir) => {
     const el = track.current;
+    if (!el) return;
     el.scrollBy({ left: dir * (el.firstElementChild.offsetWidth + GAP), behavior: 'smooth' });
   };
   const onKeyDown = (e) => {
@@ -19,7 +20,7 @@ export default function Experiences() {
   return (
     <section id="experiencias" className="alt">
       <div className="wrap">
-        <SectionHeading title="Experiencias" lead="Así se viven las jornadas de Tactical Ops. Deslizá para ver más fotos." />
+        <SectionHeading title="Experiencias" lead="Entrenamiento, comunidad y experiencias reales. Así se vive Tactical Ops." />
       </div>
       <div className="car" ref={track} role="region" aria-label="Fotos de las jornadas" tabIndex={0} onKeyDown={onKeyDown}>
         {PHOTOS.map(([src, alt], i) => (

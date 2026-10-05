@@ -1,6 +1,6 @@
 import Section from './ui/Section.jsx';
 import SectionHeading from './ui/SectionHeading.jsx';
-import CardMedia from './ui/CardMedia.jsx';
+import ImageLightbox from './ui/ImageLightbox.jsx';
 import { GUNS, PACKS } from '../data/content.js';
 
 export default function Packs() {
@@ -13,7 +13,7 @@ export default function Packs() {
       <div className="grid g4">
         {PACKS.map((pack) => (
           <article className="card" key={pack.name}>
-            <CardMedia src={pack.img} alt={pack.alt} />
+            <ImageLightbox image={pack.img} alt={pack.alt} title={`Pack ${pack.name}`} />
             <h3>{`Pack ${pack.name}`}</h3>
             <ul>
               {pack.items.map(([gun, shots]) => (

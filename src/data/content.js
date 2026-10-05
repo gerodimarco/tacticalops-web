@@ -6,9 +6,9 @@ export const SITE = {
   maps: "https://www.google.com/maps/search/?api=1&query=-26.8436216,-65.1866505"
 };
 export const GUNS = {
-  pistola: { name: "Pistola 9 mm", type: "Pistola", models: "Glock 17, Taurus G3C y Kral KR19 Pro", img: "/images/armas/pistola.jpg", alt: "Pistolas 9 mm Glock 17, Taurus G3C y Kral KR19 Pro sobre la mesa de tiro" },
-  carabina: { name: "Carabina .22", type: "Arma larga", models: "Rossi Delta 70 .22 LR y Retay RA 15/22", img: "/images/armas/carabina.jpg", alt: "Carabinas .22 Rossi Delta 70 y Retay RA 15/22 con munición y protección auditiva" },
-  escopeta: { name: "Escopeta 12/70", type: "Arma larga", models: "Hatsan Escort MPS", img: "/images/armas/escopeta.jpg", alt: "Escopeta Hatsan Escort MPS con cartuchos 12/70 sobre la mesa de tiro" }
+  pistola: { name: "Pistola 9 mm", type: "Pistola", models: ["Glock 17 Gen 3", "Taurus G3C", "Kral Arms KR19 Pro"], img: "/images/armas/pistola.jpg", alt: "Pistolas Glock 17 Gen 3, Taurus G3C y Kral Arms KR19 Pro sobre la mesa de tiro" },
+  carabina: { name: "Carabina .22", type: "Arma larga", models: ["Rossi Delta 70/22", "Retay RA 15/22"], img: "/images/armas/carabina.jpg", alt: "Carabinas Rossi Delta 70/22 y Retay RA 15/22 con munición y protección auditiva" },
+  escopeta: { name: "Escopeta 12/70", type: "Arma larga", models: ["Hatsan Escort MPS"], img: "/images/armas/escopeta.jpg", alt: "Escopeta Hatsan Escort MPS con cartuchos 12/70 sobre la mesa de tiro" }
 };
 export const PACKS = [
   { name: "Pistolero", items: [["pistola", 25]], img: "/images/packs/pistolero.jpg", alt: "Pistola 9 mm con munición, cargador y protección auditiva sobre la mesa de tiro" },
