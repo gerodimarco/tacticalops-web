@@ -1,6 +1,6 @@
 // Contenido editable del sitio: textos, packs, armas, fotos y enlaces.
 export const SITE = {
-  whatsapp: "https://wa.link/8jgmbi", // link oficial de WhatsApp (no admite texto prellenado)
+  whatsapp: "https://wa.link/mpo10h", // link oficial de WhatsApp (no admite texto prellenado)
   instagram: "https://www.instagram.com/tacticalopsarg",
   youtube: "https://www.youtube.com/@TacticalOpsArg",
   maps: "https://www.google.com/maps/search/?api=1&query=-26.8436216,-65.1866505"
