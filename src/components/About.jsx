@@ -8,11 +8,13 @@ export default function About() {
         <div>
           <SectionHeading
             title="Quiénes somos"
-            lead="Tactical Ops es una comunidad de entrenamiento y práctica responsable del tiro en Tucumán. Personas reales, experiencias reales: formación, entrenamiento y responsabilidad para quien arranca de cero y para quien quiere seguir evolucionando."
+            lead="Tactical Ops es una comunidad de formación y entrenamiento responsable del tiro en Tucumán. Creamos experiencias para quienes quieren iniciarse y espacios de entrenamiento para quienes buscan perfeccionar su técnica y seguir progresando."
           />
           <p className="lead">
-            Fundada en el 2024 y liderada por el Instructor <strong style={{ color: '#fff' }}>Geronimo Dimarco</strong>{' '}
-            (Matrícula ITB 8644).
+            Fundada en 2024 y dirigida por el instructor <strong style={{ color: '#fff' }}>Gerónimo Dimarco</strong> (matrícula ITB 8644), trabajamos con un enfoque basado en la seguridad, la formación y la responsabilidad.
+          </p>
+          <p className="lead">
+            Creemos que una buena formación comienza con bases sólidas, instrucción responsable y una actitud de aprendizaje constante. Por eso, acompañamos a cada participante según su experiencia y sus objetivos, promoviendo una práctica segura, consciente y responsable del tiro.
           </p>
         </div>
         <picture>

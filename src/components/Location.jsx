@@ -1,6 +1,7 @@
 import Section from './ui/Section.jsx';
 import SectionHeading from './ui/SectionHeading.jsx';
 import ButtonLink from './ui/ButtonLink.jsx';
+import ScheduleList from './ui/ScheduleList.jsx';
 import { SITE } from '../data/content.js';
 
 export default function Location() {
@@ -10,10 +11,13 @@ export default function Location() {
         <div>
           <SectionHeading
             title="Dónde estamos"
-            lead={<><strong style={{ color: '#fff' }}>Tiro Federal Tucumán.</strong> Las jornadas se hacen los sábados y/o domingos, en turnos de 9 a 14 hs o de 14 a 18 hs.</>}
+            lead={<><strong style={{ color: '#fff' }}>Club Tiro Federal de Tucumán.</strong> Las jornadas se realizan en los siguientes turnos:</>}
           />
+          <ScheduleList />
+          <p className="location-dates">Las fechas disponibles se anuncian en nuestro Instagram: @tacticalopsarg.</p>
           <div className="row">
             <ButtonLink href={SITE.maps}>Cómo llegar</ButtonLink>
+            <ButtonLink href={SITE.instagram} variant="outline">Consultar próximas fechas en Instagram</ButtonLink>
           </div>
         </div>
         <div className="map">

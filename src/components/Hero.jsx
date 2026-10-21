@@ -1,17 +1,27 @@
 import ButtonLink from './ui/ButtonLink.jsx';
+import ScheduleList from './ui/ScheduleList.jsx';
 import { SITE } from '../data/content.js';
 
 const INFO = [
-  ['Sede', 'Tiro Federal Tucumán'],
-  ['Días y horarios', 'Sábados y/o domingos, de 9 a 14 hs o de 14 a 18 hs'],
-  ['Para todos', 'No necesitás experiencia previa ni arma propia'],
-  ['Edad', 'Desde 12 años con padre, madre o tutor legal. Desde 18, sin acompañante'],
+  { title: 'Sede', text: 'Club Tiro Federal de Tucumán' },
+  { title: 'Días y horarios', schedule: true },
+  { title: 'Para todos', text: 'No necesitás experiencia previa ni arma propia' },
+  { title: 'Edad', text: 'Desde 12 años con padre, madre o tutor legal. Desde 18, sin acompañante' },
 ];
 
 export default function Hero() {
   return (
     <section className="hero">
-      <div className="pic" role="img" aria-label="Instructor de Tactical Ops explicando durante una jornada" />
+      <div className="pic">
+        <img
+          src="/images/hero.webp"
+          alt="Instructor de Tactical Ops explicando durante una jornada"
+          width="900"
+          height="1350"
+          fetchPriority="high"
+          decoding="async"
+        />
+      </div>
       <svg className="t" viewBox="0 0 400 400" aria-hidden="true" fill="none" stroke="#e00000">
         <circle cx="200" cy="200" r="190" strokeWidth="2" opacity=".35" />
         <circle cx="200" cy="200" r="140" strokeWidth="2" opacity=".5" />
@@ -31,10 +41,17 @@ export default function Hero() {
           <ButtonLink href={SITE.whatsapp} variant="light">Consultar</ButtonLink>
         </div>
         <div className="info">
-          {INFO.map(([title, text]) => (
-            <div key={title}>
+          {INFO.map(({ title, text, schedule }) => (
+            <div key={title} className={schedule ? 'info-hours' : undefined}>
               <b>{title}</b>
-              <span>{text}</span>
+              {schedule ? (
+                <>
+                  <ScheduleList compact />
+                  <a className="schedule-instagram" href={SITE.instagram} target="_blank" rel="noopener noreferrer">
+                    Fechas en Instagram
+                  </a>
+                </>
+              ) : <span>{text}</span>}
             </div>
           ))}
         </div>
