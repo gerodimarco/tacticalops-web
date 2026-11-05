@@ -89,6 +89,11 @@ nav .btn{min-height:42px;padding:.4rem 1.1rem;font-size:1rem}
 .card li em{font-style:normal;color:var(--ac);font-weight:600}
 .card .btn{margin-top:auto;align-self:stretch}
 .card ul{margin-bottom:1.4rem}
+.packs-track{display:flex;gap:1.1rem;overflow-x:auto;margin-top:2.6rem;padding:.3rem .2rem 1rem;scroll-snap-type:x mandatory;scroll-padding-inline:.2rem;overscroll-behavior-inline:contain;scrollbar-width:thin}
+.pack-card{flex:0 0 calc((100% - 2.2rem)/3);min-width:0;scroll-snap-align:start}
+.pack-card .image-lightbox-trigger{width:calc(100% + 3.2rem);margin:-1.6rem -1.6rem 1.15rem}
+@media(max-width:900px){.pack-card{flex-basis:calc((100% - 1.1rem)/2)}}
+@media(max-width:600px){.pack-card{flex-basis:min(86%,360px)}}
 .firearms-track{display:flex;gap:1.1rem;overflow-x:auto;margin-top:2.6rem;padding:.3rem .2rem 1rem;scroll-snap-type:x mandatory;scroll-padding-inline:.2rem;overscroll-behavior-inline:contain;scrollbar-width:thin}
 .firearm-card{flex:0 0 calc((100% - 2.2rem)/3);min-width:0;scroll-snap-align:start;padding:1.15rem}
 .firearm-card .image-lightbox-trigger{width:calc(100% + 2.3rem);margin:-1.15rem -1.15rem 1rem}
