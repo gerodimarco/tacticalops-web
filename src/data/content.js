@@ -16,7 +16,8 @@ export const FIREARMS = [
   { manufacturer: "Taurus", model: "G3C", category: "pistola", image: "/images/armas/taurus-g3c.jpg" },
   { manufacturer: "Rossi", model: "Delta 70/22", category: "carabina", image: "/images/armas/rossi-delta-70-22.jpg" },
   { manufacturer: "Retay", model: "RA 15/22", category: "carabina", image: "/images/armas/retay-ra-15-22.jpg" },
-  { manufacturer: "Hatsan", model: "Escort MPS", category: "escopeta", image: "/images/armas/hatsan-escort-mps.jpg" }
+  { manufacturer: "Hatsan", model: "Escort MPS", category: "escopeta", image: "/images/armas/hatsan-escort-mps.jpg" },
+  { manufacturer: "KHAN ARMS", model: "AX1", category: "escopeta", image: "/images/armas/khan-arms-ax1.png", imageAlt: "Escopeta KHAN ARMS AX1 calibre 12/70" }
 ].map((firearm) => ({
   ...firearm,
   caliber: GUNS[firearm.category].caliber,
@@ -24,7 +25,8 @@ export const FIREARMS = [
 }));
 export const PACKS = [
   { name: "Pistolero", items: [["pistola", 25]], img: "/images/packs/pistolero.jpg", alt: "Pistola 9 mm con munición, cargador y protección auditiva sobre la mesa de tiro" },
-  { name: "Armas Largas", items: [["carabina", 50], ["escopeta", 12]], img: "/images/packs/armas-largas.jpg", alt: "Escopeta y carabina .22 con munición y protección auditiva sobre la mesa de tiro" },
+  { name: "Brechero", items: [["pistola", 25], ["escopeta", 12]], img: "/images/packs/brechero.png", alt: "Escopeta y pistola 9 mm sobre una mesa de tiro", useWebp: false },
+  { name: "Especialista", items: [["carabina", 50], ["escopeta", 12]], img: "/images/packs/armas-largas.jpg", alt: "Escopeta y carabina .22 con munición y protección auditiva sobre la mesa de tiro" },
   { name: "Operador", items: [["pistola", 25], ["carabina", 50]], img: "/images/packs/operador.jpg", alt: "Carabina .22 con mira roja y pistola 9 mm con munición y protección auditiva" },
   { name: "Elite", items: [["pistola", 25], ["carabina", 50], ["escopeta", 12]], img: "/images/packs/elite.jpg", alt: "Escopeta, carabina .22 y pistola 9 mm con munición y equipo de protección" }
 ];
